@@ -1,0 +1,9 @@
+services:
+  chal:
+    build: .
+    container_name: pwn-TheBestAnime
+    volumes:
+      - .:/home/chal:ro
+      - ./xinetd:/etc/xinetd.d/chal:ro
+    ports:
+      - "10101:10101"
