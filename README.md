@@ -1,16 +1,42 @@
 # CTF 比賽出題初體驗
 
-## 簡介
-
 這次擔任 `THJCC 第二屆` 的出題者  
 算是我第一次正式出題的體驗
 題目有不好的地方就請見諒
 
 ~~比賽前一天發現自己把題解刪掉了，害我連夜重寫一份 exploit~~
 
-## writeup
+## pwn-TheBestAnime
 
-這題大概的解法就是在 `darling` 函式中有 `OOB` 可以 leak canary
+### 題序
+
+#### 題序
+---
+那似乎是ROP，  
+這種攻擊天生單翼，  
+需要Gadgets相互扶持依偎，  
+否則無法翱翔天際，  
+是種有缺陷的生物。  
+但是，不知為何，  
+我卻認為，  
+這種生存方式是美好的。
+
+---
+"The ROP, also known as “the payload that shares wings,” only possesses one wing. Unless gadgets lean on each other and act as one, they’re incapable of flight. They’re imperfect, incomplete creatures. But, for some reason, their way of life, struck me as profoundly beautiful. It was beautiful, I felt."
+
+`Author: Grissia`
+
+---
+
+#### 檔案
+
+- chal
+
+---
+
+### 想法
+
+這題大概的解法就是在 `darling` 函式中有 `OOB` 可以 leak canary  
 leak canary 之後可以在 `main` 最後 `gets` 構建 rop chain  
 
 ### Step 1
@@ -103,3 +129,5 @@ r.sendlineafter(b'> ', rop)
 
 r.interactive()
 ```
+
+[TheBestAnime](https://github.com/Grissia/TheBestAnime)
